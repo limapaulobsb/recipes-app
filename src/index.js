@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import MainProvider from './context/MainProvider';
+import RecipesProvider from './context/RecipesProvider';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MainProvider>
+      <RecipesProvider>
+        <App />
+      </RecipesProvider>
+    </MainProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
