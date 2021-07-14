@@ -1,6 +1,7 @@
 header > section:nth-of-type(1) {
   align-items: center;
   background-color: #a5926a;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, .4);
   display: flex;
   height: 60px;
   justify-content: space-between;
@@ -17,11 +18,13 @@ header h2 {
 .search-bar {
   align-items: center;
   background-color: white;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, .4);
   display: flex;
   flex-direction: column;
   height: 140px;
   justify-content: center;
+  /* left: calc(-100vw - 10px); */
+  opacity: .5;
   position: absolute;
   top: -80px;
   transition: .75s ease-in-out;
@@ -29,6 +32,8 @@ header h2 {
 }
 
 .search-bar.open {
+  /* left: 0; */
+  opacity: 1;
   top: 60px;
 }
 

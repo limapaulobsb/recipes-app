@@ -8,6 +8,16 @@ export function setConstants(isDrinks) {
   });
 }
 
+// Fisher-Yates algorithm as seen on https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+export function shuffle(array) {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
+
 export function urlToEmbed(url) {
   if (!url) return null;
   return url.replace('watch?v=', 'embed/');

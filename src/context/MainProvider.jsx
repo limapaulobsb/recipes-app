@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { MainContext } from '.';
 
 function MainProvider({ children }) {
-  const [userEmail, setUserEmail] = useState('wololo');
+  const [userEmail, setUserEmail] = useState('');
 
   const shared = {
     userEmail,
