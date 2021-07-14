@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 import { RecipesContext } from '.';
 
 function RecipesProvider({ children }) {
-  const [userEmail, setUserEmail] = useState('');
+  const [drinks, setDrinks] = useState([]);
+  const [meals, setmeals] = useState([]);
 
   const shared = {
-    userEmail,
-    setUserEmail,
+    drinks,
+    setDrinks,
+    meals,
+    setmeals,
   };
 
   return (
