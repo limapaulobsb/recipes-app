@@ -26,7 +26,7 @@ export async function fetchRandom(type) {
   }
 }
 
-export async function fetchLists(list, type) {
+export async function fetchList(list, type) {
   try {
     const url = type === 'meals'
       ? `https://www.themealdb.com/api/json/v1/1/list.php?${list}=list`

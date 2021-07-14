@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import DetailsProvider from './context/DetailsProvider';
 import MainProvider from './context/MainProvider';
 import RecipesProvider from './context/RecipesProvider';
 import reportWebVitals from './reportWebVitals';
@@ -10,7 +11,9 @@ ReactDOM.render(
   <React.StrictMode>
     <MainProvider>
       <RecipesProvider>
-        <App />
+        <DetailsProvider>
+          <App />
+        </DetailsProvider>
       </RecipesProvider>
     </MainProvider>
   </React.StrictMode>,

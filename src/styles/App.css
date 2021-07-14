@@ -84,6 +84,24 @@ body {
   margin-top: 100px;
 }
 
+.loading {
+  align-items: center;
+  background-color: rgba(0, 0, 0, .8);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 20;
+}
+
+.loading h1 {
+  background-color: #eee7d5;
+  padding: 20px;
+}
+
 .svg-button {
   background: transparent;
   border: none;
