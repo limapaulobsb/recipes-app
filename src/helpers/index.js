@@ -17,8 +17,3 @@ export function shuffle(array) {
   }
   return newArray;
 }
-
-export function urlToEmbed(url) {
-  if (!url) return null;
-  return url.replace('watch?v=', 'embed/');
-}

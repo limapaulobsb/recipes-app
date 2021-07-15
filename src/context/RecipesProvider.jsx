@@ -19,6 +19,7 @@ function RecipesProvider({ children }) {
 
   const getByFilter = async (filter, searchTerm, type) => {
     setIsLoading(true);
+
     let result;
     if (filter === 'ingredient') {
       result = await fetchByIngredient(type, searchTerm);
@@ -28,23 +29,27 @@ function RecipesProvider({ children }) {
       result = await fetchByFirstLetter(type, searchTerm);
     } else {
       alert('Sua busca deve conter somente 1 (um) caracter');
+
       setIsLoading(false);
       return [];
     }
 
     if (!result) {
       alert('Sinto muito, não encontramos nenhuma receita para esses filtros.');
+
       setIsLoading(false);
       return [];
     }
 
     if (result.length > 1) setRecipes({ ...recipes, [type]: result});
+
     setIsLoading(false);
     return result;
   };
 
   const getData = async () => {
     setIsLoading(true);
+
     const data = [
       fetchList('a', 'meals'),
       fetchList('c', 'drinks'),
@@ -74,6 +79,7 @@ function RecipesProvider({ children }) {
     const drinks = shuffle(result[5]);
     const meals = shuffle(result[6]);
     setRecipes({ drinks, meals });
+
     setIsLoading(false);
   };
 
