@@ -6,7 +6,6 @@ import { MainContext } from '../context';
 import { setConstants } from '../helpers';
 import FavoriteButton from './FavoriteButton';
 import ShareButton from './ShareButton';
-import '../styles/ProfileCards.css';
 
 function ProfileCards({ filter }) {
   const { done, inProgress, favorites } = useContext(MainContext);
@@ -52,8 +51,7 @@ function ProfileCards({ filter }) {
                 {pathname.includes('favorite') && (
                   <FavoriteButton details={{ [idKey]: item.id }} />
                 )}
-                <ShareButton url={`http://localhost:3000/${item.type}/${item.id}`}
-                />
+                <ShareButton url={`http://localhost:3000/${item.type}/${item.id}`} />
               </div>
             </div>
           </div>

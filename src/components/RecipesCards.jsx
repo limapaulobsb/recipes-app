@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 
 import { RecipesContext } from '../context';
 import { setConstants } from '../helpers';
-import '../styles/RecipesCards.css';
 
 function RecipesList() {
   const { recipes } = useContext(RecipesContext);

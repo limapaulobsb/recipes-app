@@ -17,7 +17,7 @@ function Profile() {
   return (
     <main className='control-buttons-page'>
       <Header title='Profile' showSearchIcon={false} />
-      <h4>{userEmail}</h4>
+      <h4>{userEmail || 'No e-mail registered'}</h4>
       <section className='control-buttons-container'>
         <input
           type='button'

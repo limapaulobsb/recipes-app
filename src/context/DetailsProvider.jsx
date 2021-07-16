@@ -10,7 +10,7 @@ function DetailsProvider({ children }) {
   const [ingredients, setIngredients] = useState([]);
   const [measures, setMeasures] = useState([]);
 
-  const getDetails = async (id, type) => {
+  const getDetails = async (type, id) => {
     setIsLoading(true);
 
     const result = id ? await fetchDetails(type, id) : await fetchRandom(type);

@@ -74,7 +74,7 @@ function Details() {
   };
 
   useEffect(() => {
-    if (details[idKey] !== id) getDetails(id, type);
+    if (details[idKey] !== id) getDetails(type, id);
   }, [id]);
 
   if (details[idKey] !== id) return null; // Fixes screen flickering before loading
