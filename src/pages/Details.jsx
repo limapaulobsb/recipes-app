@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { DetailsContext, MainContext } from '../context';
 import { setConstants } from '../helpers';
 import RecipeDetails from '../components/RecipeDetails';
-// import RecipesCarousel from '../components/RecipesCarousel';
+import RecipesCarousel from '../components/RecipesCarousel';
 
 function Details() {
   const { details, ingredients, getDetails } = useContext(DetailsContext);
@@ -34,7 +34,7 @@ function Details() {
         const recipesInProgress = inProgress.concat(formattedDetails);
         setInProgress(recipesInProgress);
       }
-      setPage('in progress');
+      setPage('in-progress');
     } else {
       const recipesInProgress = inProgress.filter((item) => item.id !== id);
       setInProgress(recipesInProgress);
@@ -52,7 +52,7 @@ function Details() {
     }
   };
 
-  const renderRecipeButton = () => {
+  const renderDetailsButton = () => {
     let buttonText = isInProgress ? 'Continue Recipe' : 'Start Recipe';
     let isDisabled;
     if (page !== 'details') {
@@ -75,14 +75,14 @@ function Details() {
 
   useEffect(() => {
     if (details[idKey] !== id) getDetails(id, type);
-  }, []);
+  }, [id]);
 
-  if (details[idKey] !== id) return null;
+  if (details[idKey] !== id) return null; // Fixes screen flickering before loading
   return (
-    <main>
+    <main className='details-page'>
       <RecipeDetails page={page} />
-      {/* <RecipesCarousel /> */}
-      {!isDone && renderRecipeButton()}
+      { page === 'details' && <RecipesCarousel /> }
+      {!isDone && renderDetailsButton()}
     </main>
   );
 }

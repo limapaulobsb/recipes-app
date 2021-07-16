@@ -70,7 +70,7 @@ function RecipeDetails({ page }) {
   );
 
   return (
-    <section className='details-container'>
+    <section>
       <div className='details-image-container'>
         <div>
           <HomeButton />

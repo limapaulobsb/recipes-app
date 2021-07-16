@@ -3,23 +3,23 @@ import { useHistory } from 'react-router-dom';
 
 import { RecipesContext } from '../context';
 import { setConstants } from '../helpers';
-import '../styles/RecipesList.css';
+import '../styles/RecipesCarousel.css';
 
-function RecipesList() {
+function RecipesCarousel() {
   const { recipes } = useContext(RecipesContext);
   const { location: { pathname }, push } = useHistory();
 
-  const isDrinks = pathname.includes('drinks');
+  const isDrinks = pathname.includes('meals');
   const { idKey, imgKey, nameKey, type } = setConstants(isDrinks);
 
   return (
-    <section className='card-list'>
+    <section className='carousel'>
       {recipes[type]
-        .filter((_item, index) => index < 12)
+        .filter((_item, index) => index < 6)
         .map((item, index) => (
           <button
             type='button'
-            className='card'
+            className='card carousel-card'
             key={index}
             onClick={() => push(`/${type}/${item[idKey]}`)}
           >
@@ -35,4 +35,4 @@ function RecipesList() {
   );
 }
 
-export default RecipesList;
+export default RecipesCarousel;

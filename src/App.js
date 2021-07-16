@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Main from './pages/Main';
 import Details from './pages/Details';
 import Profile from './pages/Profile';
+import ProfileRecipes from './pages/ProfileRecipes';
 import NotFound from './pages/NotFound';
 import './styles/App.css';
 
@@ -26,6 +27,9 @@ function App() {
         <Route exact path="/meals/:id" component={ Details } />
         <Route exact path="/drinks/:id" component={ Details } />
         <Route exact path='/profile' component={Profile} />
+        <Route exact path='/recipes-in-progress' component={ProfileRecipes} />
+        <Route exact path='/done-recipes' component={ProfileRecipes} />
+        <Route exact path='/favorite-recipes' component={ProfileRecipes} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
