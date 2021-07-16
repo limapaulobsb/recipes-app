@@ -14,22 +14,19 @@ function FavoriteButton({ details }) {
   const isFavorite = favorites.some((item) => item.id === details[idKey]);
 
   const toggleFavorite = () => {
-    const favoriteRecipes = isFavorite
+    const newFavorites = isFavorite
       ? favorites.filter((item) => item.id !== details[idKey])
       : () => { 
-        const formattedRecipe = {
-          alcohol: details.strAlcoholic || '',
-          area: details.strArea || '',
+        const formattedDetails = {
           category: details.strCategory,
           id: details[idKey],
           image: details[imgKey],
           name: details[nameKey],
           type,
         };
-
-        return favorites.concat(formattedRecipe);
+        return favorites.concat(formattedDetails);
       };
-    setFavorites(favoriteRecipes);
+    setFavorites(newFavorites);
   };
 
   return (

@@ -22,6 +22,12 @@ function Profile() {
         <input
           type='button'
           className='control-button'
+          value='Recipes In Progress'
+          onClick={() => { push('/recipes-in-progress'); } }
+        />
+        <input
+          type='button'
+          className='control-button'
           value='Done Recipes'
           onClick={() => { push('/done-recipes'); } }
         />
